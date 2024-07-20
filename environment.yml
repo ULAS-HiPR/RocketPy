@@ -1,0 +1,14 @@
+name: rocketpy_env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+    - rocketpy
+  - numpy
+  - scipy
+  - matplotlib
+  - pandas
+  - jupyterlab
