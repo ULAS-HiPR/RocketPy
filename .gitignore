@@ -11,3 +11,5 @@ __pycache__/
 # Jupyter Notebook checkpoint files
 .ipynb_checkpoints/
 
+# tmp files
+env_info.txt
