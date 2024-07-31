@@ -11,3 +11,4 @@ __pycache__/
 # Jupyter Notebook checkpoint files
 .ipynb_checkpoints/
 
+.conda/
