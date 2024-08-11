@@ -11,3 +11,8 @@ __pycache__/
 # Jupyter Notebook checkpoint files
 .ipynb_checkpoints/
 
+# rocketpy outputs
+env_info.txt
+*.kml
+*.geojson
+*.ork
