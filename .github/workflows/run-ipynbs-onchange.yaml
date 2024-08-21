@@ -1,0 +1,45 @@
+name: Run Changed Jupyter Notebooks
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  run-notebooks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: conda-incubator/setup-miniconda@v2
+        with:
+          environment-file: environment.yml
+          activate-environment: rocketpy_env
+
+      - name: Get Changed Notebooks
+        id: changed-notebooks
+        run: |
+          git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }} | grep -E '**/*.ipynb$' || echo "No notebooks changed" > changed_notebooks.txt
+          if [ -s changed_notebooks.txt ]; then
+            cat changed_notebooks.txt
+          else
+            echo "No notebooks to run"
+            exit 0
+          fi
+
+      - name: Run Changed Notebooks
+        if: steps.changed-notebooks.outputs.changed_files != ''
+        run: |
+          while IFS= read -r notebook; do
+            jupyter nbconvert --to notebook --execute "$notebook" --output "$notebook"
+          done < changed_notebooks.txt
+
+      - name: Commit Executed Notebooks
+        if: steps.changed-notebooks.outputs.changed_files != ''
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Commit executed notebooks"
+          file_pattern: "**/*.ipynb"
