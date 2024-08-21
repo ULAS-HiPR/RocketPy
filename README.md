@@ -1,5 +1,5 @@
 # RocketPy
-
+[![Run Changed Jupyter Notebooks](https://github.com/ULAS-HiPR/RocketPy/actions/workflows/run-ipynbs-onchange.yaml/badge.svg?branch=main)](https://github.com/ULAS-HiPR/RocketPy/actions/workflows/run-ipynbs-onchange.yaml)
 Flight simulation utilities, notebooks, and experiments in High Powered Rocketry.
 
 ## Projects
