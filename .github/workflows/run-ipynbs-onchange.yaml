@@ -19,6 +19,10 @@ jobs:
           environment-file: environment.yml
           activate-environment: rocketpy_env
 
+      - name: Install Jupyter
+        run: |
+          conda install -c conda-forge jupyter
+
       - name: Run All Notebooks
         run: |
           find . -name "*.ipynb" | while read -r notebook; do
