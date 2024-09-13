@@ -3,8 +3,11 @@
 Flight simulation utilities, notebooks, and experiments in High Powered Rocketry.
 
 ## Projects
-- [Mach24](./Mach24/README.md): A 3D simulation of the Mach 24 rocket Morrigu's flight.
-- [EuRoC24](./EuRoC24/README.md): A 3D simulation of the EuRoC rocket's flight.
+- [EuRoC24](./EuRoC24/README.md): Rocket flight simulation for Airmedh in EuRoc 2024.
+- [IRW24](./IRW24/README.md): Rocket flight simulation for Sionna at IRW24 - our first rocket we built.
+- [Mach24](./Mach24/README.md): Rocket flight simulation for Morrigu in Mach24.
+- `examples` is for any solutions to common issues/dependencies
+
 
 ## Installation
 
