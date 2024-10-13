@@ -6,7 +6,7 @@ dependencies:
   - python=3.12
   - pip
   - pip:
-    - rocketpy==1.4.0 
+    - rocketpy==1.5 
   - numpy
   - scipy
   - matplotlib
